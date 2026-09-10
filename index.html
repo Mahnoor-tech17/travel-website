@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayfarer Travel — Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">Wayfarer</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <form id="search-form" class="search-form">
+        <input type="text" id="search-input" placeholder="Try 'beach', 'temple', 'Japan'..." aria-label="Search destinations">
+        <button type="submit">Search</button>
+      </form>
+      <button id="reset-btn" class="btn-reset" type="button">Clear</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Find your next unforgettable trip</h1>
+      <p>Wayfarer curates the world's best beaches, temples, and cities — search above to get instant, hand-picked recommendations with real photos, wherever your wanderlust points next.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="results-wrapper">
+      <div id="results"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Beaches</h2>
+      <p class="section-sub">Sun, salt, and sand — a preview of the coastlines waiting for you.</p>
+      <div class="card-grid" id="beach-preview"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Temples</h2>
+      <p class="section-sub">Sacred architecture and centuries of history, still standing.</p>
+      <div class="card-grid" id="temple-preview"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Countries</h2>
+      <p class="section-sub">Pick a country and we'll surface the cities worth your time.</p>
+      <div class="card-grid" id="country-preview"></div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Wayfarer Travel. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Populate the default preview grids on load
+    fetch('travel_recommendation_api.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const beachGrid = document.getElementById('beach-preview');
+        const templeGrid = document.getElementById('temple-preview');
+        const countryGrid = document.getElementById('country-preview');
+
+        beachGrid.innerHTML = data.beaches.map((b) => `
+          <div class="card">
+            <img src="${b.imageUrl}" alt="${b.name}" loading="lazy">
+            <div class="card-body"><h3>${b.name}</h3><p>${b.description}</p></div>
+          </div>`).join('');
+
+        templeGrid.innerHTML = data.temples.map((t) => `
+          <div class="card">
+            <img src="${t.imageUrl}" alt="${t.name}" loading="lazy">
+            <div class="card-body"><h3>${t.name}</h3><p>${t.description}</p></div>
+          </div>`).join('');
+
+        countryGrid.innerHTML = data.countries.flatMap((c) => c.cities.map((city) => `
+          <div class="card">
+            <img src="${city.imageUrl}" alt="${city.name}, ${c.name}" loading="lazy">
+            <div class="card-body"><h3>${city.name}, ${c.name}</h3><p>${city.description}</p></div>
+          </div>`)).join('');
+      });
+  </script>
+</body>
+</html>

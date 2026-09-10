@@ -1,0 +1,64 @@
+{
+  "beaches": [
+    {
+      "id": "beach-bora-bora",
+      "name": "Bora Bora, French Polynesia",
+      "description": "Turquoise lagoons and overwater bungalows make this island a byword for paradise.",
+      "imageUrl": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "beach-whitehaven",
+      "name": "Whitehaven Beach, Australia",
+      "description": "Seven kilometres of pure silica sand swirling into the Coral Sea's blue.",
+      "imageUrl": "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "temples": [
+    {
+      "id": "temple-angkor-wat",
+      "name": "Angkor Wat, Cambodia",
+      "description": "The largest religious monument on Earth, rising from the Cambodian jungle at dawn.",
+      "imageUrl": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "temple-kyomizudera",
+      "name": "Kiyomizu-dera, Japan",
+      "description": "A wooden temple perched above Kyoto, framed by cherry blossoms and maple leaves.",
+      "imageUrl": "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "countries": [
+    {
+      "id": "country-japan",
+      "name": "Japan",
+      "cities": [
+        {
+          "name": "Tokyo",
+          "description": "Neon streets, ancient shrines, and the best food scene on the planet, all in one city.",
+          "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Kyoto",
+          "description": "Bamboo groves, geisha alleys, and over a thousand temples wrapped in quiet tradition.",
+          "imageUrl": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      "id": "country-italy",
+      "name": "Italy",
+      "cities": [
+        {
+          "name": "Rome",
+          "description": "Three thousand years of history stacked into one walkable, sunlit city.",
+          "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "name": "Venice",
+          "description": "Canals instead of streets, gondolas instead of taxis, and a skyline unlike anywhere else.",
+          "imageUrl": "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    }
+  ]
+}
